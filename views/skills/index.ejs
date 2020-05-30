@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Dev Skills</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Here Are My Developer Skills</h1>
+    <a href="/">Back Home</a>
+    <ul>
+        <% skills.forEach(function(skill, idx){ %>
+            <li>
+                <a href="/skills/<%= idx %>"><%= skill.text %></a>
+                -
+                <%= skill.acquired ? 'Yes' : 'No' %>  
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/skills/new">Add A New Skill</a>
+    <p><a href="/skills/show">Need To Delete A Skill?</a></p>
+</body>
+</html>
