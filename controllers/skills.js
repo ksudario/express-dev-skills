@@ -32,13 +32,11 @@ function newSkill(req, res) {
 
 function show(req, res){
     res.render('skills/show', {
-        skill: Skill.deleteOne(req.params.id),
+        skill: Skill.getOne(req.params.id),
         skillNum: parseInt(req.params.id) + 1
 
     });
 }
-
-  
 
 function index(req, res) {
     res.render('skills/index', {

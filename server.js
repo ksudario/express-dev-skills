@@ -5,13 +5,12 @@ const methodOverride = require('method-override');
 const indexRouter = require('./routes/index');
 const skillsRouter = require('./routes/skills');
 
-
 // Create the Express App
 const app = express();
 
 // Configure the App (app.set)
 
-// We'll use the ejs view engine
+// Use the ejs view engine
 app.set('view engine', 'ejs'); 
 
 // Mount Middleware (app.use)
