@@ -12,9 +12,21 @@
     <ul>
         <% skills.forEach(function(skill, idx){ %>
             <li>
-                💻 <a href="/skills/<%= idx %>"><%= skill.text %></a>
+                💻 <a href="/skills/<%= idx %>"><%=skill.text %></a>
                 -
-                <%= skill.acquired ? 'Yes' : 'No' %>  
+                <%= skill.acquired ? 'Yes' : 'No' %>
+
+                <form action="/skills/<%= idx %>?_method=PUT"
+                    class="update-form" method="POST">
+                    <input type ="text" placeholder="Edit Skill!" name = "newText" value="<%= skill.text %>">
+                    <button type = "submit"> Update</button>
+                </form>
+                
+                <form action="/skills/<%= idx %>?_method=DELETE"
+                        class="delete-form" method="POST">
+                        <button type="submit">Delete</button>
+                </form>
+           
             </li>
         <% }); %>
     </ul>
